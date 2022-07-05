@@ -125,7 +125,7 @@ const viewrequests = ({ status, validVotes, address }) => {
               </th>
             </tr>
           </thead>
-          {validVotes.map((valids, index) => {
+          {validVotes && validVotes.map((valids, index) => {
             return (
               <tbody key={index}>
                 <tr className="border-b">
@@ -192,6 +192,8 @@ const viewrequests = ({ status, validVotes, address }) => {
 };
 
 viewrequests.getInitialProps = async (props) => {
+  if (!props.query.address) return {};
+
   const { address } = props.query;
   const voting = Voting(props.query.address);
   const campaigns = Voting(address);

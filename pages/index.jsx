@@ -2,9 +2,8 @@ import React from "react";
 import Layout from "../components/Layout";
 import { Link } from "../routes";
 import factory from "../ethereum/factory";
-import Voting from "../ethereum/voting";
-import { useContext } from "react";
-import { State } from "../Contexts/State";
+
+
 
 const index = ({ campaigns }) => {
 
@@ -16,9 +15,8 @@ const index = ({ campaigns }) => {
       >
         <div className="flex justify-between align-middle">
           <h1 className="text-xl font-semibold">{address}</h1>
-          {/* <div className="pr-4">sua</div> */}
         </div>
-        <Link route={`campaigns/${address}`}>
+        <Link route={`/campaigns/${address}`}>
           <a className="text-sm font-bold text-indigo-900">View Campaign</a>
         </Link>
       </div>
@@ -39,7 +37,6 @@ const index = ({ campaigns }) => {
 
 index.getInitialProps = async () => {
   const campaigns = await factory.methods.getDeloyedVoting().call();
-
   return { campaigns };
 };
 

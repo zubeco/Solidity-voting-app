@@ -2,7 +2,8 @@
   "private": true,
   "scripts": {
     "test": "mocha",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "build": "next build && next export"
   },
   "dependencies": {
     "@headlessui/react": "^1.6.4",

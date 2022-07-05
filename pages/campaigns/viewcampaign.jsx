@@ -1,13 +1,12 @@
 import React from "react";
 import Voting from "../../ethereum/voting";
 import Layout from "../../components/Layout";
-import web3 from "../../ethereum/web3";
 import { Link } from "../../routes";
 import { State } from "../../Contexts/State";
 
 const viewcampaign = ({ address, manager, voters, time }) => {
-  // web3.eth.getBlock(time)
-
+  // console.log({address, manager})
+  
   return (
     <Layout>
       <h2 className="py-6 text-2xl font-semibold text-slate-200">
@@ -49,8 +48,10 @@ const viewcampaign = ({ address, manager, voters, time }) => {
 };
 
 viewcampaign.getInitialProps = async (props) => {
-  const voting = Voting(props.query.address);
+  if (!props.query.address) return {};
 
+  const voting = Voting(props.query.address);
+  
   const summary = await voting.methods.getSummary().call();
 
   return {
