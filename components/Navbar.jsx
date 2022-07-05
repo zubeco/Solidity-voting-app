@@ -3,10 +3,10 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Link } from "../routes";
+import Btn from "../components/Btn";
 
 const navigation = [
   { name: "Create Voting Poll", href: "#", current: true },
-  // { name: 'Team', href: '#', current: false },
   // { name: 'Projects', href: '#', current: false },
   // { name: 'Calendar', href: '#', current: false },
 ];
@@ -50,8 +50,9 @@ export default function Example() {
                 </Link>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <Btn />
                 <div className="hidden sm:block sm:ml-6">
-                  <Link route='/campaigns/newcampaign'>
+                  <Link route="/campaigns/newcampaign">
                     <div className="flex space-x-4">
                       {navigation.map((item) => (
                         <a
@@ -131,7 +132,7 @@ export default function Example() {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            {/* <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
@@ -148,7 +149,7 @@ export default function Example() {
                   {item.name}
                 </Disclosure.Button>
               ))}
-            </div>
+            </div> */}
           </Disclosure.Panel>
         </>
       )}

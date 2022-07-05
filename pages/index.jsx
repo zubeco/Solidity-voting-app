@@ -3,10 +3,7 @@ import Layout from "../components/Layout";
 import { Link } from "../routes";
 import factory from "../ethereum/factory";
 
-
-
 const index = ({ campaigns }) => {
-
   const addressFactory = campaigns.map((address, index) => {
     return (
       <div
