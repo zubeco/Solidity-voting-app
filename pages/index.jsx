@@ -10,8 +10,8 @@ const index = ({ campaigns }) => {
         key={index}
         className="w-full py-3 pl-4 mb-5 border-4 border-double border-slate-600 rounded-xl"
       >
-        <div className="flex justify-between align-middle">
-          <h1 className="text-xl font-semibold">{address}</h1>
+        <div className="">
+          <h1 className="text-sm font-semibold truncate md:text-base lg:text-xl">{address}</h1>
         </div>
         <Link route={`/campaigns/${address}`}>
           <a className="text-sm font-bold text-indigo-900">View Campaign</a>
