@@ -61,5 +61,4 @@ viewcampaign.getInitialProps = async (props) => {
     time: summary[2],
   };
 };
-
 export default viewcampaign;
